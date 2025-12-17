@@ -33,7 +33,7 @@
               {{ item.name }}
             </NuxtLink>
             <p class="item-category">{{ item.category }}</p>
-            <p class="item-price">${{ item.price.toFixed(2) }}</p>
+            <p class="item-price">Rs {{ item.price.toFixed(2) }}</p>
           </div>
 
           <!-- Quantity Controls -->
@@ -49,7 +49,7 @@
 
           <!-- Item Total Price -->
           <div class="item-total">
-            ${{ (item.price * item.quantity).toFixed(2) }}
+            Rs{{ (item.price * item.quantity).toFixed(2) }}
           </div>
         </div>
       </div>
@@ -60,24 +60,24 @@
         
         <div class="summary-row">
           <span>Subtotal ({{ cartStore.itemCount }} items)</span>
-          <span>${{ cartStore.totalPrice.toFixed(2) }}</span>
+          <span>Rs {{ cartStore.totalPrice.toFixed(2) }}</span>
         </div>
 
         <div class="summary-row">
           <span>Shipping</span>
-          <span>${{ shippingCost.toFixed(2) }}</span>
+          <span>Rs {{ shippingCost.toFixed(2) }}</span>
         </div>
 
         <div class="summary-row">
           <span>Tax (10%)</span>
-          <span>${{ taxAmount.toFixed(2) }}</span>
+          <span>Rs {{ taxAmount.toFixed(2) }}</span>
         </div>
 
         <div class="summary-divider"></div>
 
         <div class="summary-row total">
           <span>Total</span>
-          <span>${{ totalAmount.toFixed(2) }}</span>
+          <span>Rs {{ totalAmount.toFixed(2) }}</span>
         </div>
 
         <button @click="checkout" class="btn-checkout">

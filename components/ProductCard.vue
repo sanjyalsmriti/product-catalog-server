@@ -41,7 +41,7 @@
 
         <!-- Price and Stock -->
         <div class="product-footer">
-          <span class="product-price">${{ product.price.toFixed(2) }}</span>
+          <span class="product-price">Rs {{ product.price.toFixed(2) }}</span>
           <span class="product-stock" :class="{ 'low-stock': product.stock < 30 }">
             {{ product.stock > 0 ? 'In Stock' : 'Out of Stock' }}
           </span>
